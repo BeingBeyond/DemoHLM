@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation">
+  <meta property="og:title" content="DemoHLM" />
+  <meta property="og:url" content="https://beingbeyond.github.io/DemoHLM/" />
+  <meta name="keywords" content="Humanoid Loco-manipulation, Sim-to-Real">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DemoHLM</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/icon/favicon.ico">
+
+  <!-- Add all your videos here -->
+  <link rel="preload" as="video" href="video/main.mp4" type="video/mp4">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FC1STJNFMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FC1STJNFMS');
+  </script>
+
+  <style>
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      /* Space out the pairs of videos */
+      width: 60%;
+      margin: 0 auto;
+      /* Center the container */
+      padding: 0 20px;
+      /* Add padding on the sides for smaller screens */
+    }
+
+    .video-two {
+      width: 48%;
+      /* Adjust width slightly for spacing */
+      margin-bottom: 20px;
+      /* Space between rows */
+    }
+
+    .video-group {
+      width: 31%;
+      /* Adjust width slightly for spacing */
+      margin-bottom: 20px;
+    }
+
+    .video-pair {
+      width: 23%;
+      /* Adjust width slightly for spacing */
+      margin-bottom: 20px;
+      /* Space between rows */
+    }
+
+    .video-pair video {
+      width: 100%;
+      /*Video itself occupies full-width of parent (.video-pair)*/
+      height: auto;
+      display: block;
+      /* Important for consistent sizing/spacing*/
+    }
+
+    .video-label {
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* 一行四个视频，适度变窄 */
+    .video-row {
+      display: flex;
+      gap: 12px;                 /* 每段视频之间的间距 */
+      justify-content: center;   /* 居中整行 */
+      align-items: flex-start;
+    }
+    .video-row .item {
+      flex: 0 0 22%;             /* 宽度≈容器的 22%（四个并排 + 间距）*/
+      max-width: 22%;
+    }
+    .video-row video {
+      width: 100%;
+      height: auto;              /* 保持比例 */
+      display: block;
+      border-radius: 6px;        /* 可选的小圆角 */
+    }
+
+    /* 小屏时自动换行，两列显示（可按需调整或删除） */
+    @media (max-width: 768px) {
+      .video-row { flex-wrap: wrap; }
+      .video-row .item { flex: 0 0 48%; max-width: 48%; }
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./js/fontawesome.all.min.js"></script>
+  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-slider.min.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero is-gray is-fullheight video" style="overflow: hidden; position:relative;">
+    <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw;">
+      <video playsinline autoplay muted loop>
+        <source src="./video/main.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-video is-hidden-tablet is-inline-block-mobile"
+      style="height: 154.28571428vw; width: 100%; min-width:64.81481481vh;min-height:100%;">
+      <video playsinline autoplay muted loop>
+        <source src="./video/main_mobile.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="overlay"></div>
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head is-hidden-mobile">
+      <header class="navbar">
+        <div class="container is-size-5">
+          <div class="navbar-menu">
+
+          <div class="navbar-end">
+          <a class="navbar-item pl-4 pr-4" href="https://arxiv.org/pdf/xxx">
+              <span class="icon" style="margin-right:5px;">
+              <img src="./images/icon/pdf.svg" alt="PDF" />
+              </span>
+              <span style="color: #ffffff;">Paper</span>
+          </a>
+          <a class="navbar-item  pl-4 pr-4" href="https://arxiv.org/abs/xxx">
+              <span class="icon" style="margin-right:5px;">
+              <img src="./images/icon/arxiv.svg" alt="arXiv" />
+              </span>
+              <span style="color: #ffffff;">arXiv</span>
+          </a>
+          <a class="navbar-item  pl-4 pr-4" href="https://github.com/BeingBeyond/DemoHLM">
+              <span class="icon" style="margin-right:5px;">
+              <img src="./images/icon/github.svg" alt="github" />
+              </span>
+              <span style="color: #ffffff;">Project</span>
+          </a>
+          </div>
+      </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 10rem;">
+
+          <link href="https://fonts.googleapis.com/css?family=Times+New+Roman" rel="stylesheet">
+          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0644; letter-spacing: -0.2em;">D</span>
+          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0644; letter-spacing: -0.2em;">e</span>
+          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0672; letter-spacing: -0.2em;">m</span>
+          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff067e; letter-spacing: -0.2em;">o</span>
+          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06c5; letter-spacing: -0.2em;">H</span>
+          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06b4; letter-spacing: -0.2em;">L</span>
+          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06b0; letter-spacing: -0.2em;">M</span>
+        </h1>
+        <h1 class="subtitle is-1 publication-title is-size-3-mobile" style="font-size: 3rem; color: white;">
+          From One Demonstration to Generalizable Humanoid Loco-Manipulation
+        </h1>
+        <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 2rem; color: rgb(255, 255, 255);">
+          <br>PKU &nbsp;&nbsp; BeingBeyond
+        </h1>
+        <div class="column has-text-centered is-hidden-tablet">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/xxx" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <img src="./images/icon/pdf.svg" alt="PDF" />
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/xxx" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <img src="./images/icon/arxiv.svg" alt="arXiv" />
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="https://github.com/BeingBeyond/DemoHLM" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <img src="./images/icon/github.svg" alt="github" />
+                </span>
+                <span>Project</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-size-3-mobile">
+              <!-- <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFD700; letter-spacing: -0.2em;">B</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFC300; letter-spacing: -0.2em;">u</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFB000; letter-spacing: -0.2em;">m</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFA000; letter-spacing: -0.2em;">b</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFAA00; letter-spacing: -0.2em;">l</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFD700; letter-spacing: -0.2em;">e</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFC300; letter-spacing: -0.2em;">B</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFB000; letter-spacing: -0.2em;">e</span>
+              <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFA000; letter-spacing: -0.2em;">e</span>
+              <br> -->
+              <span style="font-size: 90%">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</span>
+            </h1>
+
+            <h1>
+              <div class="is-size-4 publication-authors is-size-5-mobile">
+                <span class="author-block">
+                    <a href="">Yuhui Fu</a>*<sup>1,2</sup>&nbsp;&nbsp;
+                </span>
+                <span class="author-block">
+                    <a href="">Feiyang Xie</a>*<sup>1,2</sup>&nbsp;&nbsp;
+                </span>
+                <span class="author-block">
+                    <a href="https://co1one.github.io/">Chaoyi Xu</a><sup>2</sup>&nbsp;&nbsp;
+                </span>
+                <span class="author-block">
+                    <a href="https://yhqpkueecs.github.io/">Haoqi Yuan</a><sup>1,2</sup>&nbsp;&nbsp;
+                </span>
+                <span class="author-block">
+                    <a href="">Jing Xiong</a><sup>1</sup>&nbsp;&nbsp;
+                </span>
+                <span class="author-block">
+                    <a href="https://z0ngqing.github.io/">Zongqing Lu</a><sup>&sect;1,2</sup>
+                </span>
+              </div>
+            </h1>
+            <h1>
+              <br>
+              <div class="is-size-4 publication-authors is-size-5-mobile">
+                <span class="author-block" style="font-size: 100%"> <sup>1</sup>PKU </span>&nbsp;&nbsp;&nbsp;
+                <span class="author-block" style="font-size: 100%"> <sup>2</sup>BeingBeyond </span>
+              </div>
+            </h1>
+            <h1>
+              <div class="is-size-5 publication-authors is-size-6-mobile">
+                <span class="author-block"><small><br><sup>*</sup>Equal Contribution &nbsp; <sup>&sect;</sup>Corresponding Author</small></span>
+              </div>
+            </h1>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/xxx"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/xxx"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/BeingBeyond/DemoHLM"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Project</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel1" class="carousel results-carousel">
+          <div class="item item-b">
+            <video id="b" height="100%" muted loop controls autoplay>
+              <source src="./video/1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-c">
+            <video id="c" height="100%" muted loop controls autoplay>
+              <source src="./video/2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-d">
+            <video id="d" height="100%" muted loop controls autoplay>
+              <source src="./video/3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item">
+            <video height="100%" muted loop controls autoplay>
+              <source src="./video/4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-a">
+            <video id="a" height="100%" muted loop controls autoplay>
+              <source src="./video/5.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <h2 class="title is-3 is-size-4-mobile">Abstract</h2>
+          <div class="content has-text-justified">
+            <ol type="a">
+            xxxx
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-thirds">
+          <div class="columns is-centered">
+            <img src="./images/overview.png" alt="overview" style="width: 100%;">
+          </div>
+
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-three-thirds">
+              <div class="content has-text-justified">
+                <br>
+                <ol type="a">
+                  xxxx
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container content">
+      <h2 style="margin-left: 14%">BibTeX</h2>
+      <pre>
+      <code>
+        xxx
+      </code>
+  </pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website template is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a> and adapted from source at <a
+                href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a
+                href="https://umi-on-legs.github.io/">UMI</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
