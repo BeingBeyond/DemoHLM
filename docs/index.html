@@ -9,7 +9,7 @@
   <meta name="keywords" content="Humanoid Loco-manipulation, Sim-to-Real">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DemoHLM</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/icon/favicon.ico">
 
@@ -20,7 +20,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FC1STJNFMS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-FC1STJNFMS');
@@ -75,25 +75,38 @@
     /* 一行四个视频，适度变窄 */
     .video-row {
       display: flex;
-      gap: 12px;                 /* 每段视频之间的间距 */
-      justify-content: center;   /* 居中整行 */
+      gap: 12px;
+      /* 每段视频之间的间距 */
+      justify-content: center;
+      /* 居中整行 */
       align-items: flex-start;
     }
+
     .video-row .item {
-      flex: 0 0 22%;             /* 宽度≈容器的 22%（四个并排 + 间距）*/
+      flex: 0 0 22%;
+      /* 宽度≈容器的 22%（四个并排 + 间距）*/
       max-width: 22%;
     }
+
     .video-row video {
       width: 100%;
-      height: auto;              /* 保持比例 */
+      height: auto;
+      /* 保持比例 */
       display: block;
-      border-radius: 6px;        /* 可选的小圆角 */
+      border-radius: 6px;
+      /* 可选的小圆角 */
     }
 
     /* 小屏时自动换行，两列显示（可按需调整或删除） */
     @media (max-width: 768px) {
-      .video-row { flex-wrap: wrap; }
-      .video-row .item { flex: 0 0 48%; max-width: 48%; }
+      .video-row {
+        flex-wrap: wrap;
+      }
+
+      .video-row .item {
+        flex: 0 0 48%;
+        max-width: 48%;
+      }
     }
   </style>
 
@@ -115,11 +128,10 @@
 
 <body>
 
-
   <section class="hero is-gray is-fullheight video" style="overflow: hidden; position:relative;">
     <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw;">
-      <video playsinline autoplay muted loop>
-        <source src="./video/main.mp4" type="video/mp4">
+      <video playsinline autoplay muted loop style="opacity: 0.98;">
+        <source src="./video/sim-video.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero-video is-hidden-tablet is-inline-block-mobile"
@@ -135,27 +147,27 @@
         <div class="container is-size-5">
           <div class="navbar-menu">
 
-          <div class="navbar-end">
-          <a class="navbar-item pl-4 pr-4" href="https://arxiv.org/pdf/xxx">
-              <span class="icon" style="margin-right:5px;">
-              <img src="./images/icon/pdf.svg" alt="PDF" />
-              </span>
-              <span style="color: #ffffff;">Paper</span>
-          </a>
-          <a class="navbar-item  pl-4 pr-4" href="https://arxiv.org/abs/xxx">
-              <span class="icon" style="margin-right:5px;">
-              <img src="./images/icon/arxiv.svg" alt="arXiv" />
-              </span>
-              <span style="color: #ffffff;">arXiv</span>
-          </a>
-          <a class="navbar-item  pl-4 pr-4" href="https://github.com/BeingBeyond/DemoHLM">
-              <span class="icon" style="margin-right:5px;">
-              <img src="./images/icon/github.svg" alt="github" />
-              </span>
-              <span style="color: #ffffff;">Project</span>
-          </a>
+            <div class="navbar-end">
+              <a class="navbar-item pl-4 pr-4" href="https://arxiv.org/pdf/xxx">
+                <span class="icon" style="margin-right:5px;">
+                  <img src="./images/icon/pdf.svg" alt="PDF" />
+                </span>
+                <span style="color: #ffffff;">Paper</span>
+              </a>
+              <a class="navbar-item  pl-4 pr-4" href="https://arxiv.org/abs/xxx">
+                <span class="icon" style="margin-right:5px;">
+                  <img src="./images/icon/arxiv.svg" alt="arXiv" />
+                </span>
+                <span style="color: #ffffff;">arXiv</span>
+              </a>
+              <a class="navbar-item  pl-4 pr-4" href="https://github.com/BeingBeyond/DemoHLM">
+                <span class="icon" style="margin-right:5px;">
+                  <img src="./images/icon/github.svg" alt="github" />
+                </span>
+                <span style="color: #ffffff;">Project</span>
+              </a>
+            </div>
           </div>
-      </div>
         </div>
       </header>
     </div>
@@ -166,18 +178,26 @@
         <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 10rem;">
 
           <link href="https://fonts.googleapis.com/css?family=Times+New+Roman" rel="stylesheet">
-          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0644; letter-spacing: -0.2em;">D</span>
-          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0644; letter-spacing: -0.2em;">e</span>
-          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0672; letter-spacing: -0.2em;">m</span>
-          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff067e; letter-spacing: -0.2em;">o</span>
-          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06c5; letter-spacing: -0.2em;">H</span>
-          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06b4; letter-spacing: -0.2em;">L</span>
-          <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06b0; letter-spacing: -0.2em;">M</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0644; letter-spacing: -0.2em;">D</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0644; letter-spacing: -0.2em;">e</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff0672; letter-spacing: -0.2em;">m</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff067e; letter-spacing: -0.2em;">o</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06c5; letter-spacing: -0.2em;">H</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06b4; letter-spacing: -0.2em;">L</span>
+          <span
+            style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #ff06b0; letter-spacing: -0.2em;">M</span>
         </h1>
         <h1 class="subtitle is-1 publication-title is-size-3-mobile" style="font-size: 3rem; color: white;">
           From One Demonstration to Generalizable Humanoid Loco-Manipulation
         </h1>
-        <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 2rem; color: rgb(255, 255, 255);">
+        <h1 class="subtitle is-1 publication-title is-size-4-mobile"
+          style="font-size: 2rem; color: rgb(255, 255, 255);">
           <br>PKU &nbsp;&nbsp; BeingBeyond
         </h1>
         <div class="column has-text-centered is-hidden-tablet">
@@ -201,7 +221,8 @@
             </span>
             <!-- Code Link. -->
             <span class="link-block">
-              <a href="https://github.com/BeingBeyond/DemoHLM" class="external-link button is-normal is-rounded is-dark">
+              <a href="https://github.com/BeingBeyond/DemoHLM"
+                class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   <img src="./images/icon/github.svg" alt="github" />
                 </span>
@@ -230,28 +251,29 @@
               <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFB000; letter-spacing: -0.2em;">e</span>
               <span style="font-family: 'apple-system', Times, serif; font-weight: bold; color: #FFA000; letter-spacing: -0.2em;">e</span>
               <br> -->
-              <span style="font-size: 90%">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</span>
+              <span style="font-size: 90%">DemoHLM: From One Demonstration to Generalizable Humanoid
+                Loco-Manipulation</span>
             </h1>
 
             <h1>
               <div class="is-size-4 publication-authors is-size-5-mobile">
                 <span class="author-block">
-                    <a href="">Yuhui Fu</a>*<sup>1,2</sup>&nbsp;&nbsp;
+                  <a href="">Yuhui Fu</a>*<sup>1,2</sup>&nbsp;&nbsp;
                 </span>
                 <span class="author-block">
-                    <a href="">Feiyang Xie</a>*<sup>1,2</sup>&nbsp;&nbsp;
+                  <a href="">Feiyang Xie</a>*<sup>1,2</sup>&nbsp;&nbsp;
                 </span>
                 <span class="author-block">
-                    <a href="https://co1one.github.io/">Chaoyi Xu</a><sup>2</sup>&nbsp;&nbsp;
+                  <a href="https://co1one.github.io/">Chaoyi Xu</a><sup>2</sup>&nbsp;&nbsp;
                 </span>
                 <span class="author-block">
-                    <a href="https://yhqpkueecs.github.io/">Haoqi Yuan</a><sup>1,2</sup>&nbsp;&nbsp;
+                  <a href="">Jing Xiong</a><sup>1</sup>&nbsp;&nbsp;
                 </span>
                 <span class="author-block">
-                    <a href="">Jing Xiong</a><sup>1</sup>&nbsp;&nbsp;
+                  <a href="https://yhqpkueecs.github.io/">Haoqi Yuan</a><sup>1,2</sup>&nbsp;&nbsp;
                 </span>
                 <span class="author-block">
-                    <a href="https://z0ngqing.github.io/">Zongqing Lu</a><sup>&sect;1,2</sup>
+                  <a href="https://z0ngqing.github.io/">Zongqing Lu</a><sup>&sect;1,2</sup>
                 </span>
               </div>
             </h1>
@@ -264,7 +286,8 @@
             </h1>
             <h1>
               <div class="is-size-5 publication-authors is-size-6-mobile">
-                <span class="author-block"><small><br><sup>*</sup>Equal Contribution &nbsp; <sup>&sect;</sup>Corresponding Author</small></span>
+                <span class="author-block"><small><br><sup>*</sup>Equal Contribution &nbsp;
+                    <sup>&sect;</sup>Corresponding Author</small></span>
               </div>
             </h1>
 
@@ -272,8 +295,7 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/xxx"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/pdf/xxx" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -281,8 +303,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/xxx"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/xxx" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -307,7 +328,7 @@
     </div>
   </section>
 
-<section class="hero is-light is-small">
+  <!-- <section class="hero is-light is-small">
     <div class="hero-body">
       <div class="container">
         <div id="results-carousel1" class="carousel results-carousel">
@@ -339,9 +360,7 @@
         </div>
       </div>
     </div>
-</section>
-
-
+  </section> -->
 
   <section class="section">
     <div class="container">
@@ -350,7 +369,21 @@
           <h2 class="title is-3 is-size-4-mobile">Abstract</h2>
           <div class="content has-text-justified">
             <ol type="a">
-            xxxx
+              Loco-manipulation is a fundamental challenge for humanoid robots to achieve versatile interactions in
+              human environments. Although recent studies have made significant progress in humanoid whole-body control,
+              loco-manipulation remains underexplored and often relies on hard-coded task definitions or costly
+              real-world data collection, which limits autonomy and generalization.
+              We present <strong>DemoHLM</strong>, a framework for humanoid loco-manipulation that enables generalizable
+              loco-manipulation on a real humanoid robot from a single demonstration in simulation. DemoHLM adopts a
+              hierarchy that integrates a low-level universal whole-body controller with high-level manipulation
+              policies for multiple tasks. The whole-body controller maps whole-body motion commands to joint torques
+              and provides omnidirectional mobility for the humanoid robot. The manipulation policies, learned in
+              simulation via our data generation and imitation learning pipeline, command the whole-body controller with
+              closed-loop visual feedback to execute challenging loco-manipulation tasks. Experiments show a positive
+              correlation between the amount of synthetic data and policy performance, underscoring the effectiveness of
+              our data generation pipeline and the data efficiency of our approach. Real-world experiments on a Unitree
+              G1 robot equipped with an RGB-D camera validate the sim-to-real transferability of DemoHLM, demonstrating
+              robust performance under spatial variations across ten loco-manipulation tasks.
             </ol>
           </div>
         </div>
@@ -362,17 +395,146 @@
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-three-thirds">
-          <div class="columns is-centered">
-            <img src="./images/overview.png" alt="overview" style="width: 100%;">
+          <div>
+            <h2 class="title is-3 is-size-4-mobile">Method Overview</h2>
+            <div class="columns is-centered">
+              <img src="./images/overview.svg" alt="overview" style="width: 100%;">
+            </div>
+
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-three-thirds">
+                <div class="content has-text-justified">
+                  <br>
+                  <ol type="a">
+                    <strong>Overview of DemoHLM.</strong> For each task, we collect a single demonstration via VR
+                    teleoperation
+                    in simulation and record the robot trajectory in the object frame. This trajectory is then used to
+                    generate the pre-manipulation and manipulation phases in our data generation pipeline. The generated
+                    transitions include robot proprioception, object poses in the camera frame, and actions expressed as
+                    high-level commands sent to the whole-body controller. A manipulation policy is trained using
+                    imitation learning on this dataset and is successfully deployed on a real robot to perform
+                    loco-manipulation.
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-thirds">
+          <div>
+            <h2 class="title is-3 is-size-4-mobile">Real-World Experiments</h2>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div id="double-carousel" class="carousel results-carousel">
+          <!-- === Page 1 === -->
+          <div class="item">
+            <div class="columns is-multiline is-centered">
+              <!-- 第一行 -->
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/liftbox.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/presscube.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/pushcube.mp4" type="video/mp4">
+                </video>
+              </div>
+              <!-- 第二行 -->
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/liftbox-ego.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/presscube-ego.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/pushcube-ego.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
           </div>
 
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-three-thirds">
-              <div class="content has-text-justified">
-                <br>
-                <ol type="a">
-                  xxxx
-                </ol>
+          <!-- === Page 2 === -->
+          <div class="item">
+            <div class="columns is-multiline is-centered">
+              <!-- 第一行 -->
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/handover.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/graspcube.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/erase.mp4" type="video/mp4">
+                </video>
+              </div>
+              <!-- 第二行 -->
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/handover-ego.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/graspcube-ego.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="column is-one-third">
+                <video height="100%" muted loop autoplay>
+                  <source src="./video/erase-ego.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-thirds">
+          <div>
+            <h2 class="title is-3 is-size-4-mobile">Comparison between Sim and Real</h2>
+            <div class="columns is-centered">
+              <img src="./images/sim-and-real.svg" alt="overview" style="width: 100%;">
+            </div>
+
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-three-thirds">
+                <div class="content has-text-justified">
+                  <br>
+                  <ol type="a">
+                    <strong>Rollouts on LiftBox in simulation and the real world.</strong> Frames are ordered left to
+                    right, illustrating key stages of the manipulation sequence executed by the learned policy.
+                  </ol>
+                </div>
               </div>
             </div>
           </div>
@@ -384,14 +546,14 @@
   <section class="section" id="BibTeX">
     <div class="container content">
       <h2 style="margin-left: 14%">BibTeX</h2>
-      <pre>
-      <code>
-        xxx
-      </code>
-  </pre>
+      <pre><code>@article{yuan2025demograsp,
+  title={DemoGrasp: Universal Dexterous Grasping from a Single Demonstration},
+  author={Yuan, Haoqi and Huang, Ziye and Wang, Ye and Mao, Chuan and Xu, Chaoyi and Lu, Zongqing},
+  journal={arXiv preprint arXiv:2509.22149},
+  year={2025}
+}</code></pre>
     </div>
   </section>
-
 
   <footer class="footer">
     <div class="container">
@@ -411,6 +573,20 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel/dist/js/bulma-carousel.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      bulmaCarousel.attach('#double-carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        autoplay: false,
+        loop: true,
+        pagination: true,
+        duration: 300,  // 可选：动画速度
+        pauseOnHover: true
+      });
+    });
+  </script>
 </body>
 
 </html>
